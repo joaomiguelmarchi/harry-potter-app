@@ -58,6 +58,24 @@ class HarryPotterWebService {
       return null;
     }
   }
+
+  Future<List<dynamic>?> getAllSpells() async {
+    final uri = Uri.parse('https://hp-api.onrender.com/api/spells');
+    try {
+      final response = await http.get(uri);
+
+      if (response.statusCode != 200) {
+        logFail(response, uri.path);
+        throw ApiResponseException(response);
+      }
+
+      logSuccess(uri.path, 'Get all the spells');
+      return jsonDecode(response.body);
+    } on Exception {
+      return null;
+    }
+  }
+
 }
 
 /// Print a fail request message

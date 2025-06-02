@@ -12,11 +12,11 @@ class HomePage extends StatelessWidget {
       backgroundColor: isDarkTheme(context) ? Colors.black : Colors.white,
       body: Center(
         child: Column(
-          spacing: 150,
+          spacing: 20,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 200.0),
+              padding: const EdgeInsets.only(top: 200.0, bottom: 60),
               child: Text(
                 'Harry Potter',
                 style: TextStyle(
@@ -61,11 +61,45 @@ class HomePage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamed(NamedRoutes.characters);
+                    Navigator.of(context).pushNamed(NamedRoutes.spells);
                   },
                   child: Container(
                     height: 200,
                     width: 190,
+                    decoration: BoxDecoration(
+                      color: isDarkTheme(context)
+                          ? Colors.grey[800]
+                          : Colors.black,
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.star_sharp, size: 100, color: Colors.white),
+                        Text(
+                          S.of(context).spells,
+                          style: TextStyle(
+                            fontSize: 45,
+                            color: Colors.white,
+                            fontFamily: 'HarryPotter',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(NamedRoutes.characters);
+                  },
+                  child: Container(
+                    height: 170,
+                    width: 400,
                     decoration: BoxDecoration(
                       color: isDarkTheme(context)
                           ? Colors.grey[800]

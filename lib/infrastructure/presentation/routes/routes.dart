@@ -5,12 +5,14 @@ import '../characters.dart';
 import '../details_screen.dart';
 import '../home.dart';
 import '../houses.dart';
+import '../spells.dart';
 
 class NamedRoutes {
   static const String home = 'home';
   static const String characters = 'characters';
   static const String houses = 'houses';
   static const String details = 'details';
+  static const String spells = 'spells';
 }
 
 class MainRoute {
@@ -22,6 +24,7 @@ class MainRoute {
       return CharactersList(house: args);
     },
     NamedRoutes.houses: (_) => const HousesScreen(),
+    NamedRoutes.spells: (_) => const SpellsScreen(),
     NamedRoutes.details: (context) {
       final args = ModalRoute.of(context)?.settings.arguments as String;
 

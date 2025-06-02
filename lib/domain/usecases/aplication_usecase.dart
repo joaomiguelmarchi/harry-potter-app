@@ -1,3 +1,4 @@
+import 'package:harry_potter/domain/entities/spell.dart';
 import 'package:harry_potter/domain/entities/wizards.dart';
 
 import '../../infrastructure/data_store/repository/interface/application_repository_interface.dart';
@@ -23,4 +24,7 @@ class _ApplicationInterface extends ApplicationUseCase {
   @override
   Future<WizardsDetails> getDetailsWizard(String id) =>
       _repository.getDetailsWizard(id);
+
+  @override
+  Future<List<Spell>> getAllSpells() => _repository.getAllSpells();
 }

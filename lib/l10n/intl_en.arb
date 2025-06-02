@@ -14,6 +14,8 @@
   "died": "Died",
   "alive": "Alive",
   "birthDate": "Birth date",
+  "spells": "Spells",
+  "search": "Search",
 
   "@_intl": {}
 }

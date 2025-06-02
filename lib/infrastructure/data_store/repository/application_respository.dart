@@ -1,3 +1,4 @@
+import 'package:harry_potter/domain/entities/spell.dart';
 import 'package:harry_potter/domain/entities/wizards.dart';
 import 'package:harry_potter/infrastructure/data_store/repository/webservice/harry_potter_webservice.dart';
 import 'package:harry_potter/infrastructure/presentation/util/date_time_format.dart';
@@ -104,9 +105,6 @@ class _ApplicationRepository implements ApplicationRepository {
       throw Exception('Wizard not found');
     }
 
-    print('ÇÇ');
-    print(response);
-
     final item = response.first;
 
     late House? house;
@@ -162,5 +160,32 @@ class _ApplicationRepository implements ApplicationRepository {
       patronus: item['patronus'],
       wand: wand,
     );
+  }
+
+  @override
+  Future<List<Spell>> getAllSpells() async {
+    try {
+      final response = await _harryPotterWebService.getAllSpells();
+
+      if (response == null) {
+        return [];
+      }
+
+      final list = <Spell>[];
+
+      for (final item in response) {
+        list.add(
+          Spell(
+            id: item['id'],
+            name: item['name'],
+            description: item['description'],
+          ),
+        );
+      }
+
+      return list;
+    } catch (e) {
+      rethrow;
+    }
   }
 }

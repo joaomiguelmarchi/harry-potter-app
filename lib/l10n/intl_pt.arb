@@ -14,6 +14,8 @@
   "died": "Morreu",
   "alive": "Vivo",
   "birthDate": "Data de nascimento",
+  "spells": "Feiticos",
+  "search": "Pesquisar",
 
   "@_intl": {}
 }

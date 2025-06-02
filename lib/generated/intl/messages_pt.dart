@@ -32,7 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "house" : MessageLookupByLibrary.simpleMessage("Casa"),
     "houses" : MessageLookupByLibrary.simpleMessage("Casas"),
     "patronus" : MessageLookupByLibrary.simpleMessage("Patronus"),
+    "search" : MessageLookupByLibrary.simpleMessage("Pesquisar"),
     "species" : MessageLookupByLibrary.simpleMessage("Especie"),
+    "spells" : MessageLookupByLibrary.simpleMessage("Feiticos"),
     "status" : MessageLookupByLibrary.simpleMessage("Status"),
     "unknownError" : MessageLookupByLibrary.simpleMessage("Erro inesperado, tente novamente mais tarde"),
     "wand" : MessageLookupByLibrary.simpleMessage("Varinha")

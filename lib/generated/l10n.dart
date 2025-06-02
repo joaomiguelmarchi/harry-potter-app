@@ -196,6 +196,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Spells`
+  String get spells {
+    return Intl.message(
+      'Spells',
+      name: 'spells',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
